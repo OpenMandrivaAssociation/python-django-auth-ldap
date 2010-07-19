@@ -11,7 +11,7 @@ License:	BSD
 Group: 		Development/Python
 Url: 		http://pypi.python.org/pypi/django-auth-ldap/
 Source0: 	http://pypi.python.org/packages/source/d/django-auth-ldap/django-auth-ldap-%{version}.tar.gz
-BuildRequires:	    python
+BuildRequires:	    python-devel
 Requires:	    python-django
 Requires:	    python-ldap
 BuildRoot:      %{_tmppath}/%{name}-%{version}
