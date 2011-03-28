@@ -1,6 +1,6 @@
 %define modname django-auth-ldap
 %define name    python-%{modname}
-%define version 1.0.8
+%define version 1.0.9
 %define release %mkrel 1
 
 Name: 		%{name}
