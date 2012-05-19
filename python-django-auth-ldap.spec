@@ -1,6 +1,6 @@
 %define modname django-auth-ldap
 %define name    python-%{modname}
-%define version 1.0.10
+%define version 1.1
 %define release %mkrel 1
 
 Name: 		%{name}
@@ -14,7 +14,6 @@ Source0: 	http://pypi.python.org/packages/source/d/django-auth-ldap/django-auth-
 BuildRequires:	    python-devel
 Requires:	    python-django
 Requires:	    python-ldap
-BuildRoot:      %{_tmppath}/%{name}-%{version}
 
 %description
 This is a Django authentication backend that authenticates against an LDAP
@@ -29,14 +28,9 @@ groups, and permissions.
 python setup.py build
 
 %install
-rm -rf %{buildroot}
 python setup.py install --root=%{buildroot}
 
-%clean
-rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root)
 %doc docs/*
 %{python_sitelib}/django_auth_ldap
-%{python_sitelib}/django_auth_ldap-%{version}-py%{pyver}.egg-info
+%{python_sitelib}/django_auth_ldap-%{version}-py*.egg-info
