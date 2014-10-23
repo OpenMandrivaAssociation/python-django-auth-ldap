@@ -1,2 +1,5 @@
+removed_sources:
+  django-auth-ldap-1.1.4.tar.gz: 6958595588700d56163fa8dcb72bea10aca55473
+  django-auth-ldap-1.1.tar.gz: f6d11cc1f535d5d514dbe6ad710b7e0a707afaba
 sources:
-  "django-auth-ldap-1.1.tar.gz": f6d11cc1f535d5d514dbe6ad710b7e0a707afaba
+  django-auth-ldap-1.2.0.tar.gz: 88f1961a20bb9330b9e3443a2c3604d4ff694913
