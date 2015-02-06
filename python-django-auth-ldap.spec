@@ -3,7 +3,7 @@
 
 Name: 		python-%{modname}
 Version: 	1.2.0
-Release: 	1
+Release: 	2
 Summary: 	Django LDAP authentication backend
 License:	BSD
 Group: 		Development/Python
