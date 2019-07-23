@@ -2,13 +2,13 @@
 %define modname django-auth-ldap
 
 Name: 		python-%{modname}
-Version: 	1.2.0
-Release: 	2
+Version:	2.0.0
+Release:	1
 Summary: 	Django LDAP authentication backend
 License:	BSD
 Group: 		Development/Python
 Url: 		http://pypi.python.org/pypi/django-auth-ldap/
-Source0: 	https://pypi.python.org/packages/source/d/%{modname}/%{modname}-%{version}.tar.gz
+Source0:	https://files.pythonhosted.org/packages/ec/95/1e7f1ee3f9ea654ae3b693662fae5112bd7827e6e1b5222f8bcf1720a2aa/django-auth-ldap-2.0.0.tar.gz
 BuildRequires:	    python-devel
 BuildRequires:	    python-distribute
 Requires:	    python-django
