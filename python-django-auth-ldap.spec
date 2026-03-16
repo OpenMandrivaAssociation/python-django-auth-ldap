@@ -1,35 +1,39 @@
-%define debug_package %{nil}
-%define modname django-auth-ldap
+%define _debugsource_template %{nil}
+%define module django-auth-ldap
+%define oname django_auth_ldap
 
-Name: 		python-%{modname}
-Version:	2.0.0
+Name: 		python-django-auth-ldap
+Version:	5.3.0
 Release:	1
 Summary: 	Django LDAP authentication backend
-License:	BSD
+License:	BSD-2-Clause
 Group: 		Development/Python
-Url: 		https://pypi.python.org/pypi/django-auth-ldap/
-Source0:	https://files.pythonhosted.org/packages/ec/95/1e7f1ee3f9ea654ae3b693662fae5112bd7827e6e1b5222f8bcf1720a2aa/django-auth-ldap-2.0.0.tar.gz
-BuildRequires:	    python-devel
-BuildRequires:	    python-distribute
-Requires:	    python-django
-Requires:	    python-ldap
+URL: 		https://github.com/django-auth-ldap/django-auth-ldap
+Source0:	%{URL}/archive/%{version}/%{name}-%{version}.tar.gz
+
+BuildSystem:	python
+BuildArch:		noarch
+BuildRequires:	pkgconfig(python)
+BuildRequires:	python%{pyver}dist(pip)
+BuildRequires:	python%{pyver}dist(setuptools)
+BuildRequires:	python%{pyver}dist(setuptools-scm)
+BuildRequires:	python%{pyver}dist(wheel)
+BuildRequires:	python%{pyver}dist(django)
+BuildRequires:	python%{pyver}dist(python-ldap)
 
 %description
-This is a Django authentication backend that authenticates against an LDAP
-service. Configuration can be as simple as a single distinguished name
-template, but there are many rich configuration options for working with users,
-groups, and permissions.
+This is a Django authentication backend that authenticates
+against an LDAP service.
 
-%prep
-%setup -q -n %modname-%{version}
+Configuration can be as simple as a single distinguished name
+template, but there are many rich configuration options for
+working with users, groups and permissions.
 
-%build
-python setup.py build
-
-%install
-python setup.py install --root=%{buildroot}
+%build -p
+export SETUPTOOLS_SCM_PRETEND_VERSION=%{version}
 
 %files
-%doc docs/*
-%{py_puresitedir}/django_auth_ldap
-%{py_puresitedir}/django_auth_ldap-%{version}-py*.egg-info
+%doc README.rst
+%license LICENSE
+%{py_puresitedir}/%{oname}
+%{py_puresitedir}/%{oname}-%{version}.dist-info
