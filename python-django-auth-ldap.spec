@@ -4,7 +4,7 @@
 
 Name: 		python-django-auth-ldap
 Version:	5.3.0
-Release:	1
+Release:	2
 Summary: 	Django LDAP authentication backend
 License:	BSD-2-Clause
 Group: 		Development/Python
@@ -13,7 +13,7 @@ Source0:	%{URL}/archive/%{version}/%{name}-%{version}.tar.gz
 
 BuildSystem:	python
 BuildArch:		noarch
-BuildRequires:	pkgconfig(python)
+BuildRequires:	pkgconfig(python3)
 BuildRequires:	python%{pyver}dist(pip)
 BuildRequires:	python%{pyver}dist(setuptools)
 BuildRequires:	python%{pyver}dist(setuptools-scm)
